@@ -4,5 +4,7 @@ class Review < ApplicationRecord
   has_many :ratings, as: :rateable
   has_many :comments
 
+  include Rateable
+
   validates :body, :title, presence: true
 end

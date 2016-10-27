@@ -1,1 +1,12 @@
 <h1>Welcome to Review That Movie App</h1>
+
+<h2>You are on the correct page</h2>
+
+<ul>
+  <% @movies.each do |movie| %>
+    <li>
+      <%= image_tag movie.poster_url.to_s %>
+      <h4><%= movie.title %></h4>
+    </li>
+  <% end %>
+</ul>
