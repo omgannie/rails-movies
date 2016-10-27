@@ -1,5 +1,6 @@
 $(document).ready(function(){
 	getCommentForm();
+	getMoviesFromCategory();
 });
 
 
@@ -21,6 +22,15 @@ function getCommentForm() {
 		});
 	});
 };
+
+function getMoviesFromCategory() {
+	$(".dropdown-menu").on('click', function(event){
+		event.preventDefault();
+
+		var $genre = $(this);
+		console.log($genre);
+	})
+}
 
 
 // LETS PULL ALL JS OUT OF THE DOC READY AND ONLY CALL FUNCTIONS FOR CLEAN JS
