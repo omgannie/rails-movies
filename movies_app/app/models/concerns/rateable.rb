@@ -6,6 +6,10 @@ module Rateable
   end
 
   def average_rating
-    return self.ratings.reduce(:+)/self.ratings.length
+  	rating_values = []
+  	self.ratings.each do |rating|
+  		rating_values << rating.value
+  	end
+    return rating_values.reduce(:+)/self.ratings.length
   end
 end

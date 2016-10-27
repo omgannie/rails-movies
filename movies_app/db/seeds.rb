@@ -24,7 +24,7 @@ horror = Category.create(genre: "Horror")
 
 sharknado = Movie.create(title: "Sharknado",
               release_date: "July 11, 2013",
-              cast: ["Ian Ziering", "Tara Reid", "John Heard"],
+              cast: "Ian Ziering, Tara Reid John Heard",
               synopsis: "When a freak hurricane swamps Los Angeles, nature's deadliest killer rules sea, land, and air as thousands of sharks terrorize the waterlogged populace.",
               poster_url: "https://images-na.ssl-images-amazon.com/images/M/MV5BOTE2OTk4MTQzNV5BMl5BanBnXkFtZTcwODUxOTM3OQ@@._V1_SY1000_CR0,0,712,1000_AL_.jpg")
 
