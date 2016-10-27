@@ -79,4 +79,16 @@ review.update_attributes(ratings: [rating1, rating3])
 
 sharknado.update_attributes(ratings: [rating2, rating4])
 
-comment = Comment.create(review_id: review.id, author_id: commenter.id, body: "I could not agree with you more!!")
+# comment = Comment.create(review_id: review.id, author_id: commenter.id, body: "I could not agree with you more!!")
+category1 = Category.create(genre: "Action")
+category2 = Category.create(genre: "Adventure")
+category3 = Category.create(genre: "Comedy")
+category4 = Category.create(genre: "Crime")
+category5 = Category.create(genre: "Drama")
+category6 = Category.create(genre: "Historical")
+category7 = Category.create(genre: "Horror")
+category8 = Category.create(genre: "Musical")
+category9 = Category.create(genre: "Sci-fi")
+category10 = Category.create(genre: "Western")
+
+Genre.create(category: category1, movie: sharknado)
