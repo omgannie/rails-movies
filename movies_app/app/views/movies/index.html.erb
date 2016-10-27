@@ -1,12 +1,13 @@
-<h1>Welcome to Review That Movie App</h1>
-
-<h2>You are on the correct page</h2>
 
 <ul>
   <% @movies.each do |movie| %>
-    <li>
-      <%= image_tag movie.poster_url.to_s %>
-      <h4><%= movie.title %></h4>
-    </li>
+  	<div class="col-md-4 col-sm-6 text-center index-movie">
+	    <li>
+          <a href="/movies/<%= movie.id%>">
+          	<%= image_tag movie.poster_url.to_s, size: "300x450" %>
+	      </a>
+	      <h4><%= link_to movie.title, movie_path(:id => movie.id) %></h4>
+	    </li>
+	  </div>
   <% end %>
 </ul>
