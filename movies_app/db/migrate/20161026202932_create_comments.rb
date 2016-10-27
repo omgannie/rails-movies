@@ -1,7 +1,7 @@
 class CreateComments < ActiveRecord::Migration[5.0]
   def change
     create_table :comments do |t|
-      t.integer  :movie_id, null: false
+      t.integer :review_id, null: false
       t.integer  :author_id, null: false
       t.string  :body, null: false
 

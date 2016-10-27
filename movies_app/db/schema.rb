@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20161026203039) do
   end
 
   create_table "comments", force: :cascade do |t|
-    t.integer  "movie_id",   null: false
+    t.integer  "review_id",  null: false
     t.integer  "author_id",  null: false
     t.string   "body",       null: false
     t.datetime "created_at", null: false
