@@ -14,3 +14,16 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function(){
+  console.log('ready');
+
+
+  $('add-rating-btn').on('submit', function(event) {
+    event.preventDefault();
+
+
+  });
+
+  // to ajaxify modal of rating movies and reviews
+});
