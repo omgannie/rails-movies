@@ -32,13 +32,9 @@ function getMoviesFromCategory() {
 
 		var ajaxRequest = $.ajax({
 			url: url_path
-		})
-
-		ajaxRequest.done(function(response){
-			console.log(response);
-		})
-	})
-}
+		});
+	});
+};
 
 
 // LETS PULL ALL JS OUT OF THE DOC READY AND ONLY CALL FUNCTIONS FOR CLEAN JS
