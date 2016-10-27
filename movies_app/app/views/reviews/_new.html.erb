@@ -1,14 +1,16 @@
 <h1>Leave a Review</h1>
 
-<%= form_for @review, url: { action: "create" } do |f| %>
+<%= form_for :review, :url => new_review_path(@movie) do |f| %>
+  <label>Title</label>
   <p>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, class: 'row col-md-12' %>
   </p>
+  <label>Content</label>
   <p>
-    <%= f.text_field :body %>
+    <%= f.text_area :body, class: "row col-md-12", size: '60x6' %>
   </p>
 
-  <p>
-    <%= submit_tag "Submit" %>
-  </p>
+  <center>
+    <%= submit_tag "Submit", class: 'btn-success btn-lg' %>
+  </center>
 <% end %>

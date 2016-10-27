@@ -1,11 +1,11 @@
-<div class="review">
+<div class="panel panel-default review">
   <div class="left reviewer">
     <h3>Trusted Reviewer</h3>
     <%= review.reviewer.username %> <%= image_tag 'trusted_sticker.png' %> <br>
     <%= review.created_at %>
   </div>
 
-  <div class="right review-content">
+  <div class="review-content">
     <div class="top-right">
       Average Rating: <%= review.average_rating %>
     </div>
@@ -16,15 +16,11 @@
     </p>
   </div>
 
-  <div class="review-options">
-    <!-- Button to leave rating on review -->
+  <div class="right review-options">
+    <% if logged_in? %>
+      <a href="/reviews/<%=review.id%>/comments/new">Add Comment</a>
+    <% else %>
+      <p><%= link_to "Login", new_login_path %> to leave a comment.</p>
+    <% end %>
   </div>
-  <% if logged_in? %>
-    <a href="/reviews/<%=review.id%>/comments/new">Add Comment</a>
-  <% else %>
-    <p><%= link_to "Login", new_login_path %> to leave a comment.</p>
-  <% end %>
 </div>
-
-<% if review.comments.any? %>
-<% end %>

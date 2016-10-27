@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :new, :create]
   resources :sessions, only: [:index, :new]
-  resources :movies, only: [:index, :show]
+  resources :movies
 
   # COMMENTS URLS
   get '/reviews/:review_id/comments/new' => 'comments#new'
@@ -16,5 +16,7 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create', as: 'login'
   delete '/logout' => 'sessions#destroy', as: 'logout'
 
-  
+  get '/movies/:movie_id/reviews/new' => 'reviews#new'
+  post '/movies/:movie_id/reviews' => 'reviews#create', as: 'new_review'
+
 end

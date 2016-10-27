@@ -1,10 +1,11 @@
-<%= image_tag @movie.poster_url.to_s %>
+<div class="container">
+  <%= image_tag @movie.poster_url.to_s, size: "300x450" %>
 
 <section class="right">
   <h1><%= @movie.title %></h1>
   <h2><%= @movie.release_date %></h2>
   <div class="top-right">
-    <h2><%= @movie.average_rating %></h2>
+    <h2>Average Rating: <%= @movie.average_rating %></h2>
   </div>
 
   <h2>Cast</h2>
@@ -30,9 +31,10 @@
 
 </section>
 
-<!-- if trusted_reviewer, render reviews#new -->
-<% if @user %>
-  <% if @user.trusted_reviewer %>
-    <%= render 'reviews/new' %>
+<section class="container">
+  <% if authorized_user.trusted_reviewer %>
+      <%= render 'reviews/new' %>
   <% end %>
-<% end %>
+</section>
+
+</div>
