@@ -1,5 +1,6 @@
 $(document).ready(function(){
 	getCommentForm();
+	submitCommentForm();
 	getMoviesFromCategory();
 });
 
@@ -16,9 +17,21 @@ function getCommentForm() {
 
 		$ajax.done(function(response) {
 			$aTag.hide();
-			console.log(response)
 			$('#add-comment').append(response);
-			console.log(2)
+		});
+	});
+};
+
+function submitCommentForm() {
+	$('#add-comment').on('submit', '#comment-form', function(event){
+		event.preventDefault();
+
+		var $form = $(this);
+
+		var $ajax = $.ajax({
+			url: $form.attr('action'),
+			method: $form.attr('method'),
+			data: $form.serialize()
 		});
 	});
 };
@@ -35,9 +48,3 @@ function getMoviesFromCategory() {
 		});
 	});
 };
-
-
-// LETS PULL ALL JS OUT OF THE DOC READY AND ONLY CALL FUNCTIONS FOR CLEAN JS
-//   $('add-rating-btn').on('submit', function(event) {
-//     event.preventDefault();
-//   });
