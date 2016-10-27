@@ -7,6 +7,6 @@ class User < ApplicationRecord
   validates :username, :email, presence: true
   validates :password, presence: true, length: { minimum: 6 }
 
-  attr_accessor :key
+  attr_reader :key
   # logic for determining trusted_reviewer status
 end
