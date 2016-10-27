@@ -13,3 +13,51 @@
  *= require_tree .
  *= require_self
  */
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 800px;
+}
+
+.show-all-reviews {
+  overflow: auto;
+}
+
+.right {
+  position: relative;
+  width: 55%;
+  top: 0;
+  float: right;
+}
+
+.top-right {
+  top: 0;
+  float: right;
+}
+
+.review {
+  width: 100%;
+  max-width: 800px;
+}
+
+.left {
+  float: left;
+  width: 40%;
+}
+
+.review-content {
+  position: relative;
+  top: 0;
+  float: right;
+  width: 60%;
+}
+
+.review-options {
+  position: relative;
+  width: 100%;
+}
+
+.new-review-form {
+  position: relative;
+}

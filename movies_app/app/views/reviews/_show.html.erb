@@ -5,7 +5,7 @@
     <%= review.created_at %>
   </div>
 
-  <div class="right review-content">
+  <div class="review-content">
     <div class="top-right">
       Average Rating: <%= review.average_rating %>
     </div>
@@ -16,9 +16,6 @@
     </p>
   </div>
 
-  <div class="review-options">
-    <!-- Button to leave rating on review -->
-  </div>
   <div id="add-comment>">
     <% if logged_in? %>
       <a class="get-comment-form" href="/reviews/<%=review.id%>/comments/new">Add Comment</a>
@@ -27,6 +24,3 @@
     <% end %>
   </div>
 </div>
-
-<% if review.comments.any? %>
-<% end %>
