@@ -1,5 +1,5 @@
 class Category < ApplicationRecord
-  belongs_to :genre
+  has_many :genres
 
   validates :genre, uniqueness: true, presence: true
 end
