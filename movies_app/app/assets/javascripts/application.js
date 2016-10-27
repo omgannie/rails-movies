@@ -24,11 +24,19 @@ function getCommentForm() {
 };
 
 function getMoviesFromCategory() {
-	$(".dropdown-menu").on('click', function(event){
+	$(".genre-list-item").on('click', function(event){
 		event.preventDefault();
 
-		var $genre = $(this);
-		console.log($genre);
+		var $genre = $(this).text();
+		var url_path = $(this).find("a").attr("href");
+
+		var ajaxRequest = $.ajax({
+			url: url_path
+		})
+
+		ajaxRequest.done(function(response){
+			console.log(response);
+		})
 	})
 }
 
