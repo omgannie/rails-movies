@@ -16,9 +16,9 @@
     </p>
   </div>
 
-  <div class="right review-options">
+  <div id="add-comment>">
     <% if logged_in? %>
-      <a href="/reviews/<%=review.id%>/comments/new">Add Comment</a>
+      <a class="get-comment-form" href="/reviews/<%=review.id%>/comments/new">Add Comment</a>
     <% else %>
       <p><%= link_to "Login", new_login_path %> to leave a comment.</p>
     <% end %>
