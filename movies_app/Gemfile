@@ -35,6 +35,9 @@ gem 'rb-readline'
 group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem 'capybara'
+  gem 'launchy'
+  gem 'pry'
+  gem 'rails-controller-testing'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
 end
