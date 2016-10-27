@@ -208,11 +208,8 @@ DEPENDENCIES
   pry
   puma (~> 3.0)
   rails (~> 5.0.0, >= 5.0.0.1)
-<<<<<<< HEAD
   rb-readline
-=======
   rails-controller-testing
->>>>>>> 8ea1e4c46dd56851bd14cae8f26aa5f82a9703a9
   rspec-rails (~> 3.5)
   sass-rails (~> 5.0)
   spring
