@@ -1,5 +1,6 @@
 $(document).ready(function(){
 	getCommentForm();
+	getMoviesFromCategory();
 });
 
 
@@ -18,6 +19,19 @@ function getCommentForm() {
 			console.log(response)
 			$('#add-comment').append(response);
 			console.log(2)
+		});
+	});
+};
+
+function getMoviesFromCategory() {
+	$(".genre-list-item").on('click', function(event){
+		event.preventDefault();
+
+		var $genre = $(this).text();
+		var url_path = $(this).find("a").attr("href");
+
+		var ajaxRequest = $.ajax({
+			url: url_path
 		});
 	});
 };
