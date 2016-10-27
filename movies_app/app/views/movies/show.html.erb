@@ -1,0 +1,35 @@
+<%= image_tag movie.poster_url.to_s %>
+
+<section class="right">
+  <h1><%= @movie.title %></h1>
+  <h2><%= @movie.release_date %></h2>
+  <div class="top-right">
+    <h2><%= @movie.average_rating %></h2>
+    <!-- This is the button to activate modal for adding movie rating-->
+    <form class="add-rating-btn" action="/ratings" method="get">
+      <input type="submit" value="Rate This Movie!">
+    </form>
+  </div>
+
+  <h2>Cast</h2>
+  <p>
+    <%= @movie.cast %>
+  </p>
+
+  <h2>Synopsis</h2>
+  <p>
+    <%= @movie.synopsis %>
+  </p>
+</section>
+
+<section class="show-all-reviews">
+  <!-- if trusted_reviewer, render ratings#new logic here -->
+  <!-- render all comments nested within this review here -->
+
+  <% if @reviews.any? %>
+    <% @reviews.each do |review| %>
+    <%= render 'reviews/show' %>
+  <% end %>
+</section>
+
+<!-- if trusted_reviewer, render reviews#new -->
