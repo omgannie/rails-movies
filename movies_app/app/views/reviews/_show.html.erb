@@ -19,6 +19,11 @@
   <div class="review-options">
     <!-- Button to leave rating on review -->
   </div>
+  <% if logged_in? %>
+    <a href="/reviews/<%=review.id%>/comments/new">Add Comment</a>
+  <% else %>
+    <p><%= link_to "Login", new_login_path %> to leave a comment.</p>
+  <% end %>
 </div>
 
 <% if review.comments.any? %>
