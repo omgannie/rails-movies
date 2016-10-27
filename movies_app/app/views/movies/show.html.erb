@@ -28,3 +28,8 @@
 </section>
 
 <!-- if trusted_reviewer, render reviews#new -->
+<% if @user %>
+  <% if @user.trusted_reviewer %>
+    <%= render 'reviews/new' %>
+  <% end %>
+<% end %>
