@@ -20,6 +20,10 @@
   max-width: 800px;
 }
 
+.show-all-reviews {
+  overflow: auto;
+}
+
 .right {
   position: relative;
   width: 55%;
@@ -52,4 +56,8 @@
 .review-options {
   position: relative;
   width: 100%;
+}
+
+.new-review-form {
+  position: relative;
 }
