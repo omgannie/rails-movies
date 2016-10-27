@@ -6,9 +6,7 @@
   <div class="top-right">
     <h2><%= @movie.average_rating %></h2>
     <!-- This is the button to activate modal for adding movie rating-->
-    <form class="add-rating-btn" action="/ratings" method="get">
-      <input type="submit" value="Rate This Movie!">
-    </form>
+    <%= link_to "Rate This Movie!", conversations_path, data: { toggle: "new", target: "#ajax-modal" } %>
   </div>
 
   <h2>Cast</h2>
@@ -23,9 +21,6 @@
 </section>
 
 <section class="show-all-reviews">
-  <!-- if trusted_reviewer, render ratings#new logic here -->
-  <!-- render all comments nested within this review here -->
-
   <% if @reviews.any? %>
     <% @reviews.each do |review| %>
     <%= render 'reviews/show' %>
