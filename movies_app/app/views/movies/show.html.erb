@@ -23,9 +23,11 @@
   <% if @reviews.any? %>
     <% @reviews.each do |review| %>
       <%= render 'reviews/show', :review => review %>
-      <% review.comments.each do |comment| %>
-        <%= render 'comments/show', :comment => comment %>
-      <% end %>
+      <div class="comments-list">
+        <% review.comments.each do |comment| %>
+          <%= render 'comments/show', :comment => comment %>
+        <% end %>
+      </div>
   <% end %>
 <% end %>
 

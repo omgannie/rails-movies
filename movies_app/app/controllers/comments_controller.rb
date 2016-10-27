@@ -1,9 +1,11 @@
 class CommentsController < ApplicationController
 
 	def new
+		@foo = "foo"
 		authenticate!
 		respond_to do |format|
-  			format.js
+			# format.html
+			format.js
   		end
 	end
 
@@ -13,7 +15,10 @@ class CommentsController < ApplicationController
 		@comment = Comment.new(comment_params)
 
 		if @comment.save
-			redirect_to comment_params[:review].movie
+			respond_to do |format|
+				# format.html { redirect_to comment_params[:review].movie }
+				format.js
+			end
 		else
 			render 'new'
 		end
