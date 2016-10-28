@@ -7,19 +7,19 @@ class RatingsController < ApplicationController
   end
 
   def new
-    if self.rateable_type == "Movie"
+    p params
+    if params[:movie_id]
       @movie = Movie.find(params[:movie_id])
-      @rating = Rating.create(rating_params)
-      @rating.update_attributes(rateable_type: "Movie", rateable_id: @movie.id)
+      p @movie
     else
       @review = Review.find(params[:review_id])
-      @rating = Rating.create(rating_params)
-      @rating.update_attributes(rateable_type: "Review", rateable_id: @review.id)
+      p @review
     end
   end
 
   def create
-
+    @rating.update_attributes(rating_params)
+    redirect_to movie_path(@movie)
   end
 
   private
