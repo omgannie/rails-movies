@@ -5,4 +5,25 @@ class RatingsController < ApplicationController
       format.js
     end
   end
+
+  def new
+    p params
+    if params[:movie_id]
+      @movie = Movie.find(params[:movie_id])
+      p @movie
+    else
+      @review = Review.find(params[:review_id])
+      p @review
+    end
+  end
+
+  def create
+    @rating.update_attributes(rating_params)
+    redirect_to movie_path(@movie)
+  end
+
+  private
+  def rating_params
+    params.require(:rating).permit(:value)
+  end
 end
