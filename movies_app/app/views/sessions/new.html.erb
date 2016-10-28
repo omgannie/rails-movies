@@ -1,15 +1,12 @@
-<h1>Login</h1>
-<%= form_for :session, url: { action: "create" } do |f| %>
-
-  <p>
-    Username: <%= f.text_field :username %>
-  </p>
-
-  <p>
-    Password: <%= f.password_field :password %>
-  </p>
-
-  <p>
-    <%= submit_tag "Submit" %>
-  </p>
-<% end %>
+<div class="wrapper">
+  <div class="form-signin form-horizontal">
+    <h2 class="form-signin-heading text-center">Login</h2>
+      <%= form_for :session, url: { action: "create" } do |f| %>
+      <p class="form-control username"> Username: <%= f.text_field :username, :size => 28 %></p>
+      <p class="form-control password"> Password: <%= f.password_field :password, :size => 28 %></p>
+      <div class="text-center">
+        <p><%= submit_tag "Submit", class: "btn btn-primary" %></p>
+      </div>
+    <% end %>
+  </div>
+</div>
