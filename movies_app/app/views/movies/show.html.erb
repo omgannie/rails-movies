@@ -1,20 +1,23 @@
-<div class="container">
+<div class="container movie-show">
   <%= image_tag @movie.poster_url.to_s, size: "300x450" %>
 
 <section class="right">
   <h1><%= @movie.title %></h1>
-  <h2><%= @movie.release_date %></h2>
+  <h3><%= @movie.release_date %></h3>
   <div class="top-right">
+    <% unless !@movie.average_rating %>
+      <h3>Average Rating: <%= @movie.average_rating %></h3>
+    <% end %>
     <h2>Average Rating: <%= @movie.average_rating %></h2>
     <%= link_to "Rate This Movie!", new_movie_rating_link_path(@movie), :class => "btn btn-block btn-info btn-lg" %>
-  </div>
+      </div>
 
-  <h2>Cast</h2>
+  <h3>Cast</h3>
     <p>
       <%= @movie.cast %>
     </p>
 
-  <h2>Synopsis</h2>
+  <h3>Synopsis</h3>
   <p>
     <%= @movie.synopsis %>
   </p>

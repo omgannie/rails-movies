@@ -7,6 +7,7 @@
               <a href="/movies/<%= movie.id%>">
               	<%= image_tag movie.poster_url.to_s, class: "movie-poster", size: "300x450" %>
     	      </a>
+    	      <h4><%= link_to movie.title, movie_path(:id => movie.id), class: "icon-ok icon-white" %></h4>
     	      <h4><%= link_to movie.title, movie_path(:id => movie.id), class: "movie-show-link" %></h4>
     	    </li>
     	  </div>
