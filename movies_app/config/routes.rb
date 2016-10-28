@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :new, :create]
   resources :sessions, only: [:index, :new]
 
-  resources :movies, only: [:index, :show]
+  resources :movies, only: [:index, :show, :new, :create]
   resources :genres, only: [:index, :show]
 
   # COMMENTS URLS

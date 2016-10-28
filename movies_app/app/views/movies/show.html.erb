@@ -38,8 +38,10 @@
 </section>
 
 <section class="container new-review-form">
-  <% if authorized_user.trusted_reviewer %>
-      <%= render 'reviews/new' %>
+  <% if authorized_user %>
+    <% if authorized_user.trusted_reviewer %>
+        <%= render 'reviews/new' %>
+    <% end %>
   <% end %>
 </section>
 

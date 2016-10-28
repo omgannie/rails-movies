@@ -1,0 +1,9 @@
+<%= form_tag("/movies", method: "post", class: "movie-form") do %>
+  <label>Title Movie</label>
+  <p>
+    <%= text_field_tag(:movie_title) %>
+  </p>
+  <center>
+    <%= submit_tag "Submit", class: 'btn-success btn-lg' %>
+  </center>
+<% end %>

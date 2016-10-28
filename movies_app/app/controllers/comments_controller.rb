@@ -3,13 +3,8 @@ class CommentsController < ApplicationController
 	def new
 		authenticate!
 		respond_to do |format|
-			if request.xhr?
-				format.js
-			else
-				format.html
-			end
-			
-			# format.xml { render :xml => @comment.to_xml }
+			format.html
+			format.js
   		end
 	end
 
@@ -20,7 +15,7 @@ class CommentsController < ApplicationController
 
 		if @comment.save
 			respond_to do |format|
-				# format.html { redirect_to comment_params[:review].movie }
+				format.html { redirect_to comment_params[:review].movie }
 				format.js
 			end
 		else
