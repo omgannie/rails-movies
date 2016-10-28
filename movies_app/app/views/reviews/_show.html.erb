@@ -1,26 +1,35 @@
 <div class="review">
-  <div class="left reviewer">
-    <h3>Trusted Reviewer</h3>
-    <%= review.reviewer.username %> <%= image_tag 'trusted_sticker.png' %> <br>
-    <%= review.created_at %>
-  </div>
-
-  <div class="review-content">
-    <div class="top-right">
-      Average Rating: <%= review.average_rating %>
+  <div class="row">
+    <div class="col-sm-3">
+      <h3>Trusted Reviewer</h3>
+      <p><span class="glyphicon glyphicon-star"><%= review.reviewer.username %></p>
+      <br>
+      <p><%= review.created_at %></p>
     </div>
+    <div class="col-sm-9">
+        <p>Average Rating: <%= review.average_rating %></p>
 
-    <h3>"<%= review.title %>"</h3>
-    <p>
-      <%= review.body %>
-    </p>
+        <h3>"<%= review.title %>"</h3>
+        <p>
+          <%= review.body %>
+        </p>
+    </div>
   </div>
 
-  <div id="add-comment>">
-    <% if logged_in? %>
-      <a class="get-comment-form" href="/reviews/<%=review.id%>/comments/new">Add Comment</a>
-    <% else %>
-      <p><%= link_to "Login", new_login_path %> to leave a comment.</p>
-    <% end %>
+  <div id="add-comment">
+    <div class="row">
+      <% if logged_in? %>
+        <div class="col-sm-3">
+          <%= link_to "Add Comment", new_comment_path(review.id), id: "get-comment-form", :class => "btn btn-block btn-primary btn-lg" %>
+        </div>
+      <% else %>
+        <div class="col-sm-3">
+          <%= link_to "Login", new_login_path, :class => "btn btn-block btn-primary btn-lg" %>
+        </div> 
+      <% end %>
+      <div class="col-sm-3">
+        <a href="#" id="toggle-comments" class="btn btn-block btn-default btn-lg">Toggle Comments</a>
+      </div>
+    </div>
   </div>
 </div>

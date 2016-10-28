@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :genres, only: [:index, :show]
 
   # COMMENTS URLS
-  get '/reviews/:review_id/comments/new' => 'comments#new'
+  get '/reviews/:review_id/comments/new' => 'comments#new', as: 'new_comment'
   post '/reviews/:review_id/comments' => 'comments#create'
   get '/reviews/:reviews_id/comments/:id' => 'comments#show'
 
