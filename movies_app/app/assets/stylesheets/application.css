@@ -159,3 +159,20 @@ background-color: #030033;
   background: white;
   padding: 40px;
 }
+
+.index-movie {
+  padding-top: 30px;
+}
+
+.movie-show-link {
+  font-size: 1.5em;
+}
+
+.movie-show-link,  .movie-show-linkt:hover, .movie-show-link:active, .movie-show-link:visited {
+  color: white;
+  text-decoration: none;
+}
+
+.movie_hover {
+  background-color: #cc5be4;
+}

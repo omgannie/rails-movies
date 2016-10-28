@@ -10,16 +10,25 @@
 	    <a class="navbar-brand" id="dukeflix" href="/">Dukeflix</a>
 	  </div>
 	  <div id="navbar" class="navbar-collapse collapse">
+	  	<% if authorized_user %>
+	  		<% if authorized_user.trusted_reviewer %>
+	  			<ul class="nav navbar-nav navbar-left">
+	  				<li class="navbar-link"><%= link_to "Add Movie", new_movie_path %></li>
+	  			</ul>
+	  		<% end %>
+	  	<% end %>
 	    <ul class="nav navbar-nav navbar-right">
 	    	 <li class="navbar-link"><%= link_to "Home", root_path %></li>
-	    	 <li class="dropdown navbar-link">
-	    	 	<a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories<span class="caret"></span></a>
-	    	 	<ul class="dropdown-menu">
-	    	 		<% categories.each do |category| %>
-	    	 			<li class="<% category.genre %> genre-list-item"><%= link_to category.genre, genre_path(id: category.id)  %></li>
-	    	 		<% end %>
-	    	 	</ul>
-	    	 </li>
+	    	 <% if @show_categories %>
+		    	 <li class="dropdown navbar-link">
+		    	 	<a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories<span class="caret"></span></a>
+		    	 	<ul class="dropdown-menu">
+		    	 		<% categories.each do |category| %>
+		    	 			<li class="<% category.genre %> genre-list-item"><%= link_to category.genre, genre_path(id: category.id)  %></li>
+		    	 		<% end %>
+		    	 	</ul>
+		    	 </li>
+		    <% end %>
 	      <% if logged_in? %>
 	        <li class="navbar-link"><%= link_to "Logout", logout_path, method: 'delete' %></li>
 	      <% else %>

@@ -5,6 +5,12 @@ $(document).ready(function(){
 	getMoviesFromCategory();
 	showHideComments();
 	newMovieAPICall();
+	  $('.index-movie').hover(
+	    	function() {
+	      $(this).addClass('movie_hover');
+	    }, function() {
+	      $(this).removeClass('movie_hover');
+	  });
 });
 
 
