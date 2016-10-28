@@ -1,0 +1,7 @@
+<div class="container">
+  <% if @movie %>
+    <h1>What did you think of <%= @movie.title %>?</h1>
+  <% elsif @review %>
+    <h1>What did you think of "<%= @review.title %>" by <%= @review.reviewer.username %>?</h1>
+  <% end %>
+</div>
