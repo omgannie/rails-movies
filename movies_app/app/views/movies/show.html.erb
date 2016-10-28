@@ -5,8 +5,10 @@
   <h1><%= @movie.title %></h1>
   <h2><%= @movie.release_date %></h2>
   <div class="top-right">
-    <h2>Average Rating: <%= @movie.average_rating %></h2>
-    <%= link_to "Rate This Movie!", new_movie_rating_link_path(@movie), :class => "btn btn-block btn-info btn-lg" %>
+    <% if @movie.ratings.length > 0 %>
+      <h2>Average Rating: <%= @movie.average_rating %></h2>
+      <%= link_to "Rate This Movie!", new_movie_rating_link_path(@movie), :class => "btn btn-block btn-info btn-lg" %>
+    <% end %>
   </div>
 
   <h2>Cast</h2>

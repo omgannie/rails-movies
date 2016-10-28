@@ -11,7 +11,7 @@ module Rateable
     	self.ratings.each do |rating|
     		rating_values << rating.value
     	end
-      return rating_values.reduce(:+)/self.ratings.length
+      return rating_values.reduce(:+)/self.ratings.length.to_f
     end
   end
 end

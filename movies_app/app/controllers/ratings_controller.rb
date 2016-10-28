@@ -7,18 +7,17 @@ class RatingsController < ApplicationController
   end
 
   def new
-    p params
     if params[:movie_id]
       @movie = Movie.find(params[:movie_id])
-      p @movie
     else
       @review = Review.find(params[:review_id])
-      p @review
     end
   end
 
   def create
-    @rating.update_attributes(rating_params)
+    @movie = Movie.find(params[:movie_id].to_i)
+    @rating = Rating.create(rateable: @movie, value: params[:rating][:value].to_i)
+
     redirect_to movie_path(@movie)
   end
 
