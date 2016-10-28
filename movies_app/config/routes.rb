@@ -21,4 +21,10 @@ Rails.application.routes.draw do
   get '/movies/:movie_id/reviews/new' => 'reviews#new'
   post '/movies/:movie_id/reviews' => 'reviews#create', as: 'new_review'
 
+  get '/movies/:movie_id/ratings/new' => 'ratings#new', as: 'new_movie_rating_link'
+  post '/movies/:movie_id/ratings' => 'ratings#create', as: 'create_new_movie_rating'
+
+  get '/reviews/:review_id/ratings/new' => 'ratings#new', as: 'new_review_rating_link'
+  post '/reviews/:review_id/ratings' => 'ratings#create', as: 'create_new_review_rating'
+
 end

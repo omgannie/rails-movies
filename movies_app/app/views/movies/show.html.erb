@@ -6,6 +6,7 @@
   <h2><%= @movie.release_date %></h2>
   <div class="top-right">
     <h2>Average Rating: <%= @movie.average_rating %></h2>
+    <%= link_to "Rate This Movie!", new_movie_rating_link_path(@movie), :class => "btn btn-block btn-info btn-lg" %>
   </div>
 
   <h2>Cast</h2>
@@ -25,7 +26,7 @@
       <hr>
       <div class="review-comments">
         <%= render 'reviews/show', :review => review %>
-      
+
         <div class="comments-list">
           <% review.comments.each do |comment| %>
             <%= render 'comments/show', :comment => comment %>

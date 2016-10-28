@@ -22,10 +22,13 @@
         <div class="col-sm-3">
           <%= link_to "Add Comment", new_comment_path(review.id), id: "get-comment-form", :class => "btn btn-block btn-primary btn-lg" %>
         </div>
+        <div class="col-sm-3">
+          <%= link_to  "Rate This Review", new_review_rating_link_path(review.id), :class => "btn btn-block btn-info btn-lg" %>
+        </div>
       <% else %>
         <div class="col-sm-3">
           <%= link_to "Login", new_login_path, :class => "btn btn-block btn-primary btn-lg" %>
-        </div> 
+        </div>
       <% end %>
       <div class="col-sm-3">
         <a href="#" id="toggle-comments" class="btn btn-block btn-default btn-lg">Toggle Comments</a>
