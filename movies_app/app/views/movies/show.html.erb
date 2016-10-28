@@ -1,19 +1,21 @@
-<div class="container">
+<div class="container movie-show">
   <%= image_tag @movie.poster_url.to_s, size: "300x450" %>
 
 <section class="right">
   <h1><%= @movie.title %></h1>
-  <h2><%= @movie.release_date %></h2>
+  <h3><%= @movie.release_date %></h3>
   <div class="top-right">
-    <h2>Average Rating: <%= @movie.average_rating %></h2>
+    <% unless !@movie.average_rating %>
+      <h3>Average Rating: <%= @movie.average_rating %></h3>
+    <% end %>
   </div>
 
-  <h2>Cast</h2>
+  <h3>Cast</h3>
     <p>
       <%= @movie.cast %>
     </p>
 
-  <h2>Synopsis</h2>
+  <h3>Synopsis</h3>
   <p>
     <%= @movie.synopsis %>
   </p>
@@ -25,7 +27,7 @@
       <hr>
       <div class="review-comments">
         <%= render 'reviews/show', :review => review %>
-      
+
         <div class="comments-list">
           <% review.comments.each do |comment| %>
             <%= render 'comments/show', :comment => comment %>
