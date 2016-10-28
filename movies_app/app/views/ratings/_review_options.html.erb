@@ -1,0 +1,6 @@
+<div class="dropdown container">
+  <%= form_for :rating, :url => create_new_review_rating_path(@review) do |f| %>
+    <%= f.select :value, [1,2,3,4,5] %>
+    <%= submit_tag 'Submit Your Rating!', class: 'btn-primary btn-lg' %>
+  <% end %>
+</div>

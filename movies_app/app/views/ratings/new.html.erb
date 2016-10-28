@@ -1,7 +1,13 @@
 <div class="container movie-show">
   <% if @movie %>
     <h1>What did you think of <%= @movie.title %>?</h1>
+    <div class="row">
+      <%= render 'ratings/movie_options', :movie => @movie %>
+    </div>
   <% elsif @review %>
     <h1>What did you think of "<%= @review.title %>" by <%= @review.reviewer.username %>?</h1>
+    <div class="row">
+      <%= render 'ratings/review_options', :review => @review %>
+    </div>
   <% end %>
 </div>
