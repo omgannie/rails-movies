@@ -156,3 +156,38 @@ background-color: #030033;
     border-top-right-radius: 0;
   }
 }
+
+.index-movie {
+  padding-top: 30px;
+}
+
+.movie-show-link {
+  font-size: 1.5em;
+}
+
+.movie-show-link,  .movie-show-linkt:hover, .movie-show-link:active, .movie-show-link:visited {
+  color: white;
+  text-decoration: none;
+}
+
+.movie_hover {
+  background-color: #cc5be4;
+}
+
+/*.show_restaurant:hover {
+  font-weight: bold;
+}
+
+.delete_restaurant {
+  background:none;
+  border:none;
+}
+
+.delete_restaurant, .edit_restaurant, .edit_restaurant:hover, .edit_restaurant:active {
+  color: black;
+}
+
+.edit_restaurant:hover, .delete_restaurant:hover {
+  text-decoration: none;
+  font-weight: bold;
+}*/
