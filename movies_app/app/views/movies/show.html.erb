@@ -22,11 +22,15 @@
 <section class="show-all-reviews">
   <% if @reviews.any? %>
     <% @reviews.each do |review| %>
-      <%= render 'reviews/show', :review => review %>
-      <div class="comments-list">
-        <% review.comments.each do |comment| %>
-          <%= render 'comments/show', :comment => comment %>
-        <% end %>
+      <hr>
+      <div class="review-comments">
+        <%= render 'reviews/show', :review => review %>
+      
+        <div class="comments-list">
+          <% review.comments.each do |comment| %>
+            <%= render 'comments/show', :comment => comment %>
+          <% end %>
+        </div>
       </div>
   <% end %>
 <% end %>

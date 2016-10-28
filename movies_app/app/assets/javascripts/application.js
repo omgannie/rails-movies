@@ -1,12 +1,14 @@
 $(document).ready(function(){
+	$('.comments-list').hide();
 	getCommentForm();
 	submitCommentForm();
 	getMoviesFromCategory();
+	showHideComments();
 });
 
 
 function getCommentForm() {
-	$('.get-comment-form').on('click', function(event) {
+	$('#get-comment-form').on('click', function(event) {
 		event.preventDefault();
 
 		var $aTag = $(this);
@@ -33,6 +35,11 @@ function submitCommentForm() {
 			method: $form.attr('method'),
 			data: $form.serialize()
 		});
+
+		$ajax.done(function(response) {
+			$form.remove();
+			$('#get-comment-form').show();
+		})
 	});
 };
 
@@ -46,5 +53,13 @@ function getMoviesFromCategory() {
 		var ajaxRequest = $.ajax({
 			url: url_path
 		});
+	});
+};
+
+function showHideComments() {
+	$('#toggle-comments').on('click', function(event) {
+		event.preventDefault();
+		console.log(1)
+		$(this).closest('.review-comments').find('.comments-list').slideToggle('medium');
 	});
 };

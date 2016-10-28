@@ -1,11 +1,15 @@
 class CommentsController < ApplicationController
 
 	def new
-		@foo = "foo"
 		authenticate!
 		respond_to do |format|
-			# format.html
-			format.js
+			if request.xhr?
+				format.js
+			else
+				format.html
+			end
+			
+			# format.xml { render :xml => @comment.to_xml }
   		end
 	end
 

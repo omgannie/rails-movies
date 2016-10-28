@@ -61,3 +61,15 @@
 .new-review-form {
   position: relative;
 }
+
+#add-comment {
+  margin-bottom: 30px;
+}
+
+.comment-partial {
+  margin-bottom: 30px;
+}
+
+body {
+  background-image: linear-gradient(to bottom, hsl(0, 80%, 70%), #bada55);
+}
