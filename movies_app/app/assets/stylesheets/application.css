@@ -14,6 +14,8 @@
  *= require_self
  */
 
+@import "bourbon";
+
 .container {
   margin: 0 auto;
   width: 100%;
@@ -71,5 +73,86 @@
 }
 
 body {
-  background-image: linear-gradient(to bottom, hsl(0, 80%, 70%), #bada55);
+  background: #3a6186; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #3a6186 , #89253e); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #3a6186 , #89253e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  font-family: 'Lato', sans-serif;
+}
+
+.navbar {
+  background-color: #892570;
+  padding: 10px;
+  border-width: 3px;
+  border-color: #3a6186;
+  font-size: 1.4em;
+}
+
+.navbar-default .navbar-nav > .active >
+ a:hover, .navbar-default .navbar-nav > .active > a:focus {
+color: white; /*BACKGROUND color for active*/
+background-color: #030033;
+}
+
+.dropdown-menu > li > a:hover,
+   .dropdown-menu > li > a:focus {
+    color: white;
+   text-decoration: none;
+   font-family: 'Lato', sans-serif;
+  background-color: #3a6186;  /*change color of links in drop down here*/
+   }
+
+#dukeflix {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2em;
+  color: white;
+}
+
+.nav.navbar-nav.navbar-right > li > a {
+    color: white;
+}
+
+.genre-list-item a {
+  color: black;
+}
+
+.wrapper {
+  width: 600px;
+  margin: 0 auto;
+}
+
+.form-signin {
+  max-width: 380px;
+  padding: 15px 35px 45px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0,0.1);
+
+  .form-signin-heading,
+  .checkbox {
+    margin-bottom: 30px;
+  }
+
+  .form-control {
+    position: relative;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+    @include box-sizing(border-box);
+
+    &:focus {
+      z-index: 2;
+    }
+  }
+
+  .username {
+    margin-bottom: -1px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .password {
+    margin-bottom: 20px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
 }

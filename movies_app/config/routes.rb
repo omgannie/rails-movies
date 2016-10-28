@@ -16,7 +16,8 @@ Rails.application.routes.draw do
 
   get '/login' => 'sessions#new', as: 'new_login'
   post '/login' => 'sessions#create', as: 'login'
-  delete '/logout' => 'sessions#destroy', as: 'logout'
+  get '/logout' => 'sessions#destroy', as: 'logout'
+  # delete '/logout' => 'sessions#destroy', as: 'logout'
 
   get '/movies/:movie_id/reviews/new' => 'reviews#new'
   post '/movies/:movie_id/reviews' => 'reviews#create', as: 'new_review'
