@@ -16,11 +16,11 @@
     </div>
   </div>
 
-  <div id="add-comment">
+  <div class="add-comment">
     <div class="row">
       <% if logged_in? %>
         <div class="col-sm-3">
-          <%= link_to "Add Comment", new_comment_path(review.id), id: "get-comment-form", :class => "btn btn-block btn-primary btn-lg" %>
+          <%= link_to "Add Comment", new_comment_path(review.id), :class => "btn btn-block btn-primary btn-lg get-comment-form" %>
         </div>
       <% else %>
         <div class="col-sm-3">
@@ -28,7 +28,7 @@
         </div> 
       <% end %>
       <div class="col-sm-3">
-        <a href="#" id="toggle-comments" class="btn btn-block btn-default btn-lg">Toggle Comments</a>
+        <a href="#" class="toggle-comments btn btn-block btn-default btn-lg">Toggle Comments</a>
       </div>
     </div>
   </div>
